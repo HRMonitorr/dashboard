@@ -18,7 +18,8 @@
   <!-- Popper -->
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <!-- Main Styling -->
-  <link href="../assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/buttonlogout.css">
+    <link href="../assets/css/argon-dashboard-tailwind.css?v=1.0.1" rel="stylesheet" />
 </head>
 
 <body
@@ -54,14 +55,18 @@
             </div>
           </div>
           <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-
-            <li class="flex items-center">
-              <a href="../pages/sign-in.html"
-                class="block px-0 py-2 font-semibold text-white transition-all ease-nav-brand text-sm ">
-                <i class="fa fa-user sm:mr-1" aria-hidden="true"></i>
-                <span class="hidden sm:inline">Sign In</span>
-              </a>
-            </li>
+            <div id="signInButton">
+              <li class="flex items-center">
+                <a href="../pages/sign-in.html" class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
+                  <i class="fa fa-user sm:mr-1"></i>
+                  <span class="hidden sm:inline">Sign In</span>
+                </a>
+              </li>
+            </div>
+              <button class="btn-logout" id="logoutButton">
+                <i class="fa fa-user sm:mr-1"></i>
+                <span class="hidden sm:inline">Logout</span>
+              </button>      
             <li class="flex items-center pl-4 xl:hidden">
               <a href="javascript:;" class="block p-0 text-white transition-all ease-nav-brand text-sm "
                 sidenav-trigger>
@@ -256,7 +261,7 @@
             </a>
           </li>
 
-          <li class="mt-0.5 w-full">
+          <li class="mt-0.5 w-full" id="signInButton">
             <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80"
               href="../pages/sign-in.html">
               <div
@@ -267,7 +272,7 @@
             </a>
           </li>
 
-          <li class="mt-0.5 w-full">
+          <li class="mt-0.5 w-full" id="signUpButton">
             <a class="py-2.7 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap px-4 transition-colors dark:text-white dark:opacity-80"
               href="../pages/sign-up.html">
               <div
@@ -634,6 +639,8 @@
   </div>
   </div>
 </body>
+<script type="module" src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@cc40ad5ab8c53a8a73bc8e3560b4f1a131b669ac/jscroot/js/controller/controller_button.min.js"></script>
+
 <!-- plugin for scrollbar  -->
 <script src="../assets/js/plugins/perfect-scrollbar.min.js" async></script>
 <!-- main script file  -->
