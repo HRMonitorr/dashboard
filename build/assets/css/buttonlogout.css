@@ -1,0 +1,18 @@
+.btn-logout {
+    background-color: red; /* Warna latar belakang merah */
+    color: white; /* Warna teks putih */
+    padding: 10px 20px; /* Padding untuk ruang di sekitar teks */
+    border: none; /* Menghapus border */
+    border-radius: 20px; /* Membuat sudut-sudut bulat */
+    cursor: pointer; /* Mengubah kursor saat dihover menjadi tanda tangan */
+    display: flex; /* Menjadikan elemen flex container */
+    align-items: center; /* Mengatur vertikal tengah (tengah) konten */
+    font-size: 14px; /* Ukuran teks */
+    font-weight: 600; /* Ketebalan teks */
+    transition: all 0.3s ease; /* Efek transisi saat mouse hover */
+  }
+  
+  .btn-logout i {
+    margin-right: 5px; /* Margin antara ikon dan teks */
+  }
+  
