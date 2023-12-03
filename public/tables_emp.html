@@ -10,13 +10,19 @@
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="./assets/js/init-alpine.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/assets/css/loading.css">
 
 </head>
 
 <body>
+  <div id="loadingOverlay">
+    <div id="spinnerContainer" class="lds-ring">
+        <div></div>
+    </div>
+</div>
   <!-- SIDEBAR -->
 
-  <div class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
+  <div id="contentContainer" class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
     <!-- Desktop sidebar -->
     <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
       <div class="py-4 text-gray-500 dark:text-gray-400">
@@ -382,20 +388,21 @@
               <!-- End Table Employee -->
             </div>
           </div>
+             <!-- Button to Open Modal -->
+    <button onclick="openModal()"
+    class="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+    class="h-6 w-6 inline-block mr-2">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+</svg>
+Buat Employee
+</button>
       </main>
     </div>
   </div>
   
-    <!-- Button to Open Modal -->
-    <button onclick="openModal()"
-        class="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-        class="h-6 w-6 inline-block mr-2">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-    </svg>
-    Buat Employee
-</button>
+ 
 
   <!-- Modal Container -->
 <div id="modal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
@@ -490,4 +497,6 @@
   <script src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/config/modal.js"></script>
   <script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/controller/controller_insertemp.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.6/jscroot/js/config/loading.js"></script>
+
 </html>
