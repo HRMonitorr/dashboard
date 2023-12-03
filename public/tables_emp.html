@@ -397,85 +397,86 @@
     Buat Employee
 </button>
 
-     <!-- Modal Container -->
-     <div id="modal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
-      <div class="bg-white rounded-lg w-96 p-6 relative">
-          <!-- Modal Content -->
-          <span onclick="closeModal()" class="absolute top-2 right-2 p-2 cursor-pointer">&times;</span>
-          <form id="newEmployeeForm" class="grid gap-4 text-sm grid-cols-2">
-              <div>
-                  <label for="newEmployeeIdInput" class="text-gray-600 block">Employee ID:</label>
-                  <input type="text" id="newEmployeeIdInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
+  <!-- Modal Container -->
+<div id="modal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
+  <div class="bg-white rounded-lg w-96 p-6 relative">
+      <!-- Modal Content -->
+      <span onclick="closeModal()" class="absolute top-2 right-2 p-2 cursor-pointer">&times;</span>
+      <form id="newEmployeeForm" class="grid gap-4 text-sm grid-cols-2">
+          <div>
+              <label for="newEmployeeIdInput" class="text-gray-600 block">Employee ID:</label>
+              <input type="text" id="newEmployeeIdInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="E12345">
+          </div>
+          <div>
+              <label for="newNameInput" class="text-gray-600 block">Nama:</label>
+              <input type="text" id="newNameInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="Nama">
+          </div>
+          <div>
+              <label for="newEmailInput" class="text-gray-600 block">Email:</label>
+              <input type="email" id="newEmailInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="email@gmail.com">
+          </div>
+          <div>
+              <label for="newPhoneInput" class="text-gray-600 block">Phone:</label>
+              <input type="tel" id="newPhoneInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="081234567890">
+          </div>
+          <div>
+              <label for="newDivisionInput" class="text-gray-600 block">Division:</label>
+              <input type="text" id="newDivisionInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="Marketing">
+          </div>
+          <div>
+              <label for="newUsernameInput" class="text-gray-600 block">Username:</label>
+              <input type="text" id="newUsernameInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="Username">
+          </div>
+          <div>
+              <label for="newPasswordInput" class="text-gray-600 block">Password:</label>
+              <input type="password" id="newPasswordInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="Password">
+          </div>
+          <div>
+              <label for="newRoleInput" class="text-gray-600 block">Role:</label>
+              <select id="newRoleInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required>
+                  <option value="admin">Admin</option>
+                  <option value="user">User</option>
+              </select>
+          </div>
+          <div>
+              <label for="newBasicSalaryInput" class="text-gray-600 block">Basic Salary:</label>
+              <input type="text" id="newBasicSalaryInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="50000">
+          </div>
+          <div>
+              <label for="newHonorDivisionInput" class="text-gray-600 block">Honor Division:</label>
+              <input type="text" id="newHonorDivisionInput"
+                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+                  required placeholder="Awards">
+          </div>
+          <div class="col-span-2 text-right">
+              <div class="inline-flex items-end">
+                  <button type="submit"
+                      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buat Employee
+                      baru</button>
               </div>
-              <div>
-                  <label for="newNameInput" class="text-gray-600 block">Nama:</label>
-                  <input type="text" id="newNameInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-              </div>
-              <div>
-                  <label for="newEmailInput" class="text-gray-600 block">Email:</label>
-                  <input type="text" id="newEmailInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-              </div>
-              <div>
-                  <label for="newPhoneInput" class="text-gray-600 block">Phone:</label>
-                  <input type="tel" id="newPhoneInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-              </div>
-              <div>
-                  <label for="newDivisionInput" class="text-gray-600 block">Division:</label>
-                  <input type="text" id="newDivisionInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-              </div>
-              <div>
-                  <label for="newUsernameInput" class="text-gray-600 block">Username:</label>
-                  <input type="text" id="newUsernameInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-              </div>
-              <div>
-                  <label for="newPasswordInput" class="text-gray-600 block">Password:</label>
-                  <input type="password" id="newPasswordInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-              </div>
-              <div>
-                  <label for="newRoleInput" class="text-gray-600 block">Role:</label>
-                  <select id="newRoleInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-                      <option value="admin">Admin</option>
-                      <option value="user">User</option>
-                  </select>
-              </div>
-              <div>
-                  <label for="newBasicSalaryInput" class="text-gray-600 block">Basic Salary:</label>
-                  <input type="text" id="newBasicSalaryInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-              </div>
-              <div>
-                  <label for="newHonorDivisionInput" class="text-gray-600 block">Honor Division:</label>
-                  <input type="text" id="newHonorDivisionInput"
-                      class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                      required>
-              </div>
-              <div class="col-span-2 text-right">
-                  <div class="inline-flex items-end">
-                      <button type="submit"
-                          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buat
-                          Employee baru</button>
-                  </div>
-              </div>
-          </form>
-      </div>
+          </div>
+      </form>
   </div>
+</div>
+
 </body>
 <script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.2/jscroot/js/controller/controller_button.js"></script>
