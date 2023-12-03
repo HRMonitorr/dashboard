@@ -2,13 +2,13 @@
 <html :class="{ 'theme-dark': dark }" x-data="data()" lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - HRM Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/tailwind.output.css" />
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script src="../assets/js/init-alpine.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - HRM Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/tailwind.output.css" />
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+  <script src="../assets/js/init-alpine.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/public/assets/css/loading.css">
 
@@ -17,65 +17,69 @@
 <body>
   <div id="loadingOverlay">
     <div id="spinnerContainer" class="lds-ring">
-        <div></div>
+      <div></div>
     </div>
-</div>
-    <div id="contentContainer" class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
-        <div class="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
-            <div class="flex flex-col overflow-y-auto md:flex-row">
-                <div class="h-32 md:h-auto md:w-1/2">
-                    <img aria-hidden="true" class="object-cover w-full h-full dark:hidden"
-                        src="../assets/img/login-office.jpeg" alt="Office" />
-                    <img aria-hidden="true" class="hidden object-cover w-full h-full dark:block"
-                        src="../assets/img/login-office-dark.jpeg" alt="Office" />
-                </div>
-                <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
-                    <div class="w-full">
-                        <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
-                            Login
-                        </h1>
-                        <form id="formlogin">
-                          <div>
-                            <label for="username" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Username</label>
-                            <input type="text" name="username" id="username" placeholder="Username Anda"
-                              class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" required/>
-                          </div>
-      
-                          <div class="mt-6">
-                            <div class="flex justify-between mb-2">
-                              <label for="password" class="text-sm text-gray-600 dark-text-gray-200">Kata Sandi</label>
-                            </div>
-      
-                            <input type="password" name="password" id="password" placeholder="Kata Sandi Anda"
-                              class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" required />
-                          </div>
-                          <input type="role" name="role" id="role" hidden value="user" />
-      
-                          <div class="mt-6">
-                            <button type="submit"
-                              class="button w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
-                              Masuk
-                            </button>
-                          </div>
-      
-                        </form>
-
-                        <hr class="my-8" />
-                        </p>
-                        <p class="mt-1">
-                            <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
-                                href="./create-account.html">
-                                Create account
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+  </div>
+  <div id="contentContainer" class="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
+    <div class="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
+      <div class="flex flex-col overflow-y-auto md:flex-row">
+        <div class="h-32 md:h-auto md:w-1/2">
+          <img aria-hidden="true" class="object-cover w-full h-full dark:hidden" src="../assets/img/login-office.jpeg"
+            alt="Office" />
+          <img aria-hidden="true" class="hidden object-cover w-full h-full dark:block"
+            src="../assets/img/login-office-dark.jpeg" alt="Office" />
         </div>
+        <div class="flex items-center justify-center p-6 sm:p-12 md:w-1/2">
+          <div class="w-full">
+            <h1 class="mb-4 text-xl font-semibold text-gray-700 dark:text-gray-200">
+              Login
+            </h1>
+            <form id="formlogin">
+              <div>
+                <label for="username" class="block mb-2 text-sm text-gray-600 dark:text-gray-200">Username</label>
+                <input type="text" name="username" id="username" placeholder="Username Anda"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  required />
+              </div>
+
+              <div class="mt-6">
+                <div class="flex justify-between mb-2">
+                  <label for="password" class="text-sm text-gray-600 dark-text-gray-200">Kata Sandi</label>
+                </div>
+
+                <input type="password" name="password" id="password" placeholder="Kata Sandi Anda"
+                  class="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  required />
+              </div>
+              <input type="role" name="role" id="role" hidden value="user" />
+
+              <div class="mt-6">
+                <button type="submit"
+                  class="button w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-400 focus:outline-none focus:bg-blue-400 focus:ring focus:ring-blue-300 focus:ring-opacity-50">
+                  Masuk
+                </button>
+              </div>
+
+            </form>
+
+            <hr class="my-8" />
+            </p>
+            <p class="mt-1">
+              <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
+                href="./create-account.html">
+                Create account
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
 <script src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.6/jscroot/js/config/loading.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.5/jscroot/js/controller/controller_login.js"></script>
+<script type="module"
+  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.5/jscroot/js/controller/controller_login.js"></script>
+
 </html>

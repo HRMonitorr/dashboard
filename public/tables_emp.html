@@ -17,12 +17,13 @@
 <body>
   <div id="loadingOverlay">
     <div id="spinnerContainer" class="lds-ring">
-        <div></div>
+      <div></div>
     </div>
-</div>
+  </div>
   <!-- SIDEBAR -->
 
-  <div id="contentContainer" class="flex h-screen bg-gray-50 dark:bg-gray-900" :class="{ 'overflow-hidden': isSideMenuOpen }">
+  <div id="contentContainer" class="flex h-screen bg-gray-50 dark:bg-gray-900"
+    :class="{ 'overflow-hidden': isSideMenuOpen }">
     <!-- Desktop sidebar -->
     <aside class="z-20 hidden w-64 overflow-y-auto bg-white dark:bg-gray-800 md:block flex-shrink-0">
       <div class="py-4 text-gray-500 dark:text-gray-400">
@@ -47,16 +48,17 @@
         <ul>
           <li class="relative px-6 py-3">
             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
-                href="tables_emp.html">
-                <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3a3 3 0 100 6 3 3 0 000-6zm0 14c-2.67 0-5-1.33-6.5-3.5 1.5-2.17 3.83-3.5 6.5-3.5s5 1.33 6.5 3.5c-1.5 2.17-3.83 3.5-6.5 3.5zm6-6h-1.5a6.47 6.47 0 00-1.3-3.5 3.75 3.75 0 01-3.2-2.2 6.49 6.49 0 00-4.6 0 3.75 3.75 0 01-3.2 2.2A6.47 6.47 0 005.5 13H4a2 2 0 01-2-2v-1a6 6 0 0112 0v1a2 2 0 01-2 2z"></path>
-                </svg>
-                <span class="ml-4">Tables Employees</span>
+              href="tables_emp.html">
+              <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3a3 3 0 100 6 3 3 0 000-6zm0 14c-2.67 0-5-1.33-6.5-3.5 1.5-2.17 3.83-3.5 6.5-3.5s5 1.33 6.5 3.5c-1.5 2.17-3.83 3.5-6.5 3.5zm6-6h-1.5a6.47 6.47 0 00-1.3-3.5 3.75 3.75 0 01-3.2-2.2 6.49 6.49 0 00-4.6 0 3.75 3.75 0 01-3.2 2.2A6.47 6.47 0 005.5 13H4a2 2 0 01-2-2v-1a6 6 0 0112 0v1a2 2 0 01-2 2z">
+                </path>
+              </svg>
+              <span class="ml-4">Tables Employees</span>
             </a>
-        </li>
-        
+          </li>
+
           <li class="relative px-6 py-3">
             <a class="inline-flex items-center w-full text-sm font-semibold transition-colors duration-150 hover:text-gray-800 dark:hover:text-gray-200"
               href="tables_user.html">
@@ -388,115 +390,123 @@
               <!-- End Table Employee -->
             </div>
           </div>
-             <!-- Button to Open Modal -->
-    <button onclick="openModal()"
-    class="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-    class="h-6 w-6 inline-block mr-2">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-</svg>
-Buat Employee
-</button>
+          <!-- Button to Open Modal -->
+          <button onclick="openModal()"
+            class="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+              class="h-6 w-6 inline-block mr-2">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+              </path>
+            </svg>
+            Buat Employee
+          </button>
       </main>
     </div>
   </div>
-  
- 
+
+
 
   <!-- Modal Container -->
-<div id="modal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
-  <div class="bg-white rounded-lg w-96 p-6 relative">
+  <div id="modal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
+    <div class="bg-white rounded-lg w-96 p-6 relative">
       <!-- Modal Content -->
       <span onclick="closeModal()" class="absolute top-2 right-2 p-2 cursor-pointer">&times;</span>
       <form id="newEmployeeForm" class="grid gap-4 text-sm grid-cols-2">
-          <div>
-              <label for="newEmployeeIdInput" class="text-gray-600 block">Employee ID:</label>
-              <input type="text" id="newEmployeeIdInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="E12345">
+        <div>
+          <label for="newEmployeeIdInput" class="text-gray-600 block">Employee ID:</label>
+          <input type="text" id="newEmployeeIdInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="E12345">
+        </div>
+        <div>
+          <label for="newNameInput" class="text-gray-600 block">Nama:</label>
+          <input type="text" id="newNameInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="Nama">
+        </div>
+        <div>
+          <label for="newEmailInput" class="text-gray-600 block">Email:</label>
+          <input type="email" id="newEmailInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="email@gmail.com">
+        </div>
+        <div>
+          <label for="newPhoneInput" class="text-gray-600 block">Phone:</label>
+          <input type="tel" id="newPhoneInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="081234567890">
+        </div>
+        <div>
+          <label for="newDivisionInput" class="text-gray-600 block">Division:</label>
+          <input type="text" id="newDivisionInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="Marketing">
+        </div>
+        <div>
+          <label for="newUsernameInput" class="text-gray-600 block">Username:</label>
+          <input type="text" id="newUsernameInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="Username">
+        </div>
+        <div>
+          <label for="newPasswordInput" class="text-gray-600 block">Password:</label>
+          <input type="password" id="newPasswordInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="Password">
+        </div>
+        <div>
+          <label for="newRoleInput" class="text-gray-600 block">Role:</label>
+          <select id="newRoleInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required>
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+        </div>
+        <div>
+          <label for="newBasicSalaryInput" class="text-gray-600 block">Basic Salary:</label>
+          <input type="text" id="newBasicSalaryInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="50000">
+        </div>
+        <div>
+          <label for="newHonorDivisionInput" class="text-gray-600 block">Honor Division:</label>
+          <input type="text" id="newHonorDivisionInput"
+            class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
+            required placeholder="Awards">
+        </div>
+        <div class="col-span-2 text-right">
+          <div class="inline-flex items-end">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buat
+              Employee
+              baru</button>
           </div>
-          <div>
-              <label for="newNameInput" class="text-gray-600 block">Nama:</label>
-              <input type="text" id="newNameInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="Nama">
-          </div>
-          <div>
-              <label for="newEmailInput" class="text-gray-600 block">Email:</label>
-              <input type="email" id="newEmailInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="email@gmail.com">
-          </div>
-          <div>
-              <label for="newPhoneInput" class="text-gray-600 block">Phone:</label>
-              <input type="tel" id="newPhoneInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="081234567890">
-          </div>
-          <div>
-              <label for="newDivisionInput" class="text-gray-600 block">Division:</label>
-              <input type="text" id="newDivisionInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="Marketing">
-          </div>
-          <div>
-              <label for="newUsernameInput" class="text-gray-600 block">Username:</label>
-              <input type="text" id="newUsernameInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="Username">
-          </div>
-          <div>
-              <label for="newPasswordInput" class="text-gray-600 block">Password:</label>
-              <input type="password" id="newPasswordInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="Password">
-          </div>
-          <div>
-              <label for="newRoleInput" class="text-gray-600 block">Role:</label>
-              <select id="newRoleInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required>
-                  <option value="admin">Admin</option>
-                  <option value="user">User</option>
-              </select>
-          </div>
-          <div>
-              <label for="newBasicSalaryInput" class="text-gray-600 block">Basic Salary:</label>
-              <input type="text" id="newBasicSalaryInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="50000">
-          </div>
-          <div>
-              <label for="newHonorDivisionInput" class="text-gray-600 block">Honor Division:</label>
-              <input type="text" id="newHonorDivisionInput"
-                  class="h-10 border mt-1 rounded px-4 w-full bg-gray-100 focus:outline-none focus:ring focus:border-blue-300"
-                  required placeholder="Awards">
-          </div>
-          <div class="col-span-2 text-right">
-              <div class="inline-flex items-end">
-                  <button type="submit"
-                      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Buat Employee
-                      baru</button>
-              </div>
-          </div>
+        </div>
       </form>
+    </div>
   </div>
-</div>
 
 </body>
+<!-- controller Hidden -->
 <script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/controller/controller_button.js"></script>
+<!-- Controller Logout -->
 <script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/controller/controller_logout.js"></script>
+<!-- Controller User -->
 <script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/controller/controller_user.js"></script>
+<!-- Controller Employees -->
 <script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/controller/controller_employee.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/config/modal.js"></script>
-  <script type="module"
+<!-- Sweet Alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<!-- Modal -->
+<script src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/config/modal.js"></script>
+<!-- Insert Employee -->
+<script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.4/jscroot/js/controller/controller_insertemp.js"></script>
+<!-- Loading -->
 <script src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.6/jscroot/js/config/loading.js"></script>
 
 </html>
