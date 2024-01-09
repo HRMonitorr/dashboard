@@ -9,18 +9,12 @@
   <link rel="stylesheet" href="./assets/css/tailwind.output.css" />
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="./assets/js/init-alpine.js"></script>
-  <link rel="stylesheet" href="/public/assets/css/loading.css">
   <link rel="icon" href="/public/assets/img/fav.jpg">
 
 </head>
 
 <body>
-  <div id="loadingOverlay">
-    <div id="spinnerContainer" class="lds-ring">
-      <div></div>
-    </div>
-  </div>
-  <!-- SIDEBAR -->
+
 
   <div id="contentContainer" class="flex h-screen bg-gray-50 dark:bg-gray-900"
     :class="{ 'overflow-hidden': isSideMenuOpen }">
@@ -360,5 +354,4 @@
 <script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.3.1/jscroot/js/controller/controller_getuser.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.2.6/jscroot/js/config/loading.js"></script>
 </html>
