@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - HRM Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/tailwind.output.css" />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="../assets/js/init-alpine.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/public/assets/css/loading.css">
+    <link rel="icon" href="/public/assets/img/fav.jpg">
+
+</head>
+
+<body>
+    <!-- component -->
+    <div id="OtpCode" class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-12">
+        <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl">
+            <div class="mx-auto flex w-full max-w-md flex-col space-y-16">
+                <div class="flex flex-col items-center justify-center text-center space-y-2">
+                    <div class="font-semibold text-3xl">
+                        <p>OTP Verification</p>
+                    </div>
+                    <div class="flex flex-row text-sm font-medium text-gray-400">
+                        <p>We have sent a code to your Whatsapp</p>
+                    </div>
+                </div>
+
+                <div>
+                    <form id="formotp" method="post">
+                        <div class="flex flex-col space-y-16">
+                            <div class="flex flex-row items-center justify-between mx-auto w-full max-w-xs">
+                                <div class="w-16 h-16 ">
+                                    <input
+                                        class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                                        type="text" name="" id="otpsatu">
+                                </div>
+                                <div class="w-16 h-16 ">
+                                    <input
+                                        class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                                        type="text" name="" id="otpdua">
+                                </div>
+                                <div class="w-16 h-16 ">
+                                    <input
+                                        class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                                        type="text" name="" id="otptiga">
+                                </div>
+                                <div class="w-16 h-16 ">
+                                    <input
+                                        class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                                        type="text" name="" id="otpempat">
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col space-y-5">
+                                <div>
+                                    <button
+                                        class="flex flex-row items-center justify-center text-center w-full border rounded-xl outline-none py-5 bg-blue-700 border-none text-white text-sm shadow-sm">
+                                        Submit
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="flex flex-row items-center justify-center text-center text-sm font-medium space-x-1 text-gray-500">
+                                    <p>Didn't recieve code?</p> <a class="flex flex-row items-center text-blue-600"
+                                        href="http://" target="_blank" rel="noopener noreferrer">Resend</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.3.1/jscroot/js/config/loading.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+<script type="module"
+    src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.3.1/jscroot/js/controller/controller_login.js"></script>
+<script type="module"
+    src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.3.1/jscroot/js/controller/controller_otp.js"></script>
+
+</html>
