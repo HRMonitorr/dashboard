@@ -324,7 +324,6 @@
     </header>
     <main class="h-full pb-16 overflow-y-auto">
       <div class="container px-6 mx-auto grid">
-        <!-- component -->
         <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
           <div class="container max-w-screen-lg mx-auto">
             <div>
@@ -349,22 +348,23 @@
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Submit</button>
                   </form>
                   <div id="commitTable" class="w-full overflow-x-auto">
-                    <table class="w-full whitespace-no-wrap">
-                      <thead>
-                        <th class="px-4 py-3">Author</th>
-                        <th class="px-4 py-3">Repository</th>
-                        <th class="px-4 py-3">Email</th>
-                        <th class="px-4 py-3">Comment</th>
-                        <th class="px-4 py-3">Date</th>
-                      </thead>
-                      <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800" id="commitTableBody">
-                      </tbody>
-                    </table>
+                    <div class="overflow-x-auto">
+                      <table class="w-full whitespace-no-wrap">
+                        <thead>
+                          <th class="px-4 py-3">Author</th>
+                          <th class="px-4 py-3">Repository</th>
+                          <th class="px-4 py-3">Email</th>
+                          <th class="px-4 py-3">Comment</th>
+                          <th class="px-4 py-3">Date</th>
+                        </thead>
+                        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800" id="commitTableBody">
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
     </main>
   </div>
 </div>
