@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./assets/css/tailwind.output.css" />
   <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
   <script src="./assets/js/init-alpine.js"></script>
+  <link rel="stylesheet" href="/public/assets/css/chart.css">
+  
   <link rel="icon" href="/public/assets/img/fav.jpg">
 
 </head>
@@ -323,6 +325,8 @@
         <div class="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
           <div class="container max-w-screen-lg mx-auto">
             <div>
+  <canvas id="myChart" ></canvas>
+
               <h2 class="font-semibold text-xl text-gray-600">Table Monitoring</h2>
               <br>
               <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
@@ -361,6 +365,15 @@
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <!-- <canvas id="commitChart" width="400" height="200"></canvas> -->
+  <canvas id="myChart" width="400" height="200" ></canvas>
+  <canvas id="myLineChart" width="400" height="200" ></canvas>
+  <canvas id="myPieChart" width="400" height="200" ></canvas>
+
+      </div>
+
     </main>
   </div>
 </div>
@@ -368,12 +381,18 @@
 <script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.5.7/jscroot/js/controller/controller_button.js"></script>
 <script type="module"
-  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.5.7/jscroot/js/controller/controller_getuser.js"></script>
-<script type="module"
   src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.5.7/jscroot/js/controller/controller_logout.js"></script>
 <script type="module"
-  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.5.7/jscroot/js/controller/get_commit.js"></script>
+  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.5.0/jscroot/js/controller/get_commit.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
+  <script type="module"
+  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.8.3/jscroot/js/controller/chart.js"></script>
+  <script type="module"
+  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.8.3/jscroot/js/controller/line_chart.js"></script>
+  <script type="module"
+  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.9.1/jscroot/js/controller/pie.js"></script>
+<!-- <script type="module" src="script.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
 
 </html>
