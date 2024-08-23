@@ -2,20 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - HRM Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/tailwind.output.css" />
-  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-  <script src="../assets/js/init-alpine.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OTP Verification - HRM Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/tailwind.output.css">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="icon" href="/public/assets/img/fav.jpg">
-
 </head>
 
 <body>
-  <!-- component -->
+  <!-- OTP Verification Component -->
   <div id="OtpCode" class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray-50 py-12">
     <div class="relative bg-white px-6 pt-10 pb-9 shadow-xl mx-auto w-full max-w-lg rounded-2xl">
       <div class="mx-auto flex w-full max-w-md flex-col space-y-16">
@@ -28,7 +25,7 @@
           </div>
         </div>
         <form id="formotp" method="post" class="space-y-4">
-          <div class="flex space-x-2 text-center"> <!-- Add text-center class here -->
+          <div class="flex space-x-2 text-center">
             <input type="text" name="otp-code" id="otp-code" maxlength="6" placeholder="Enter OTP"
               class="flex-1 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline-blue focus:border-blue-500">
           </div>
@@ -41,16 +38,49 @@
           </div>
 
           <div class="text-center text-sm text-gray-500">
-            <p>Didn't receive the code? <a href="#" class="text-blue-600">Resend</a></p>
+            <p>Didn't receive the code? <a href="login.html" class="text-blue-600">Resend</a></p>
           </div>
         </form>
       </div>
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+  <script>
+    document.getElementById('formotp').addEventListener('submit', function (e) {
+      e.preventDefault();
+  
+      const otpCode = document.getElementById('otp-code').value;
+  
+      axios.post('https://asia-southeast2-gis-project-401902.cloudfunctions.net/loginafterotp', {
+        'otp-code': otpCode
+      })
+      .then(function (response) {
+        if (response.data.status) {
+          Swal.fire({
+            title: 'OTP Verified!',
+            text: response.data.message,
+            icon: 'success',
+            confirmButtonText: 'OK'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              // Store the token in cookies
+              Cookies.set('Login', response.data.token, { expires: 7, path: '/' });
+              // Redirect 
+              window.location.href = '../index.html';
+            }
+          });
+        } else {
+          Swal.fire('Error', 'OTP verification failed, please try again.', 'error');
+        }
+      })
+      .catch(function (error) {
+        Swal.fire('Error', 'An error occurred during OTP verification.', 'error');
+      });
+    });
+  </script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-<script type="module"
-  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.5.7/jscroot/js/controller/controller_otp.js"></script>
 
 </html>

@@ -59,7 +59,6 @@
             </form>
 
             <hr class="my-8" />
-            </p>
             <p class="mt-1">
               <a class="text-sm font-medium text-purple-600 dark:text-purple-400 hover:underline"
                 href="./create-account.html">
@@ -73,7 +72,43 @@
   </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
-<script type="module"
-  src="https://cdn.jsdelivr.net/gh/HRMonitorr/js-hrm@0.5.7/jscroot/js/controller/controller_login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script>
+  document.getElementById('formlogin').addEventListener('submit', function (e) {
+    e.preventDefault();
+  
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+  
+    axios.post('https://asia-southeast2-gis-project-401902.cloudfunctions.net/loginotp', {
+      username: username,
+      password: password
+    })
+    .then(function (response) {
+      if (response.data.status) {
+        Swal.fire({
+          title: 'Login Successful!',
+          text: `Token: ${response.data.token}`,
+          icon: 'success',
+          confirmButtonText: 'OK'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            // Store the token in cookies
+            Cookies.set('Login', response.data.token, { expires: 7, path: '/' });
+            // Redirect to OTP verification page
+            window.location.href = './otp.html';
+          }
+        });
+      } else {
+        Swal.fire('Error', 'Login failed, please try again.', 'error');
+      }
+    })
+    .catch(function (error) {
+      Swal.fire('Error', 'An error occurred during login.', 'error');
+    });
+  });
+  
+</script>
 
 </html>
